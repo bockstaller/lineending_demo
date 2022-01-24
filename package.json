@@ -4,10 +4,12 @@
   "author": "",
   "version": "0.1.0",
   "scripts": {
-    "validate": "office-toolbox validate -m manifest.xml"
+    "validate": "office-toolbox validate -m manifest.xml",
+    "validate_1": "office-addin-manifest validate manifest.xml"
   },
   "dependencies": {
-    "office-toolbox": "^0.1.1"
-  },
-  "devDependencies": {}
+    "office-addin-manifest": "^1.7.6",
+    "office-toolbox": "^0.1.1",
+    "yarn": "^1.22.17"
+  }
 }

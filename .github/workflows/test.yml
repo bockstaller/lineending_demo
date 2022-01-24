@@ -18,5 +18,12 @@ jobs:
         node-version: '14'
 
     - run: npm install
+    
+    - run: yarn run validate
+
+    - run: yarn run validate_1
 
     - run: npm run validate
+
+    - run: npm run validate_1
+
