@@ -6,7 +6,7 @@ on:
     branches: ['*']
 
 jobs:
-  test:
+  yarn:
     runs-on: ubuntu-latest
 
     steps:
@@ -21,9 +21,20 @@ jobs:
     
     - run: yarn run validate
 
-    - run: yarn run validate_1
+
+  npm:
+    runs-on: ubuntu-latest
+
+    steps:
+
+    - uses: actions/checkout@v2
+
+    - uses: actions/setup-node@v2
+      with:
+        node-version: '14'
+
+    - run: npm install
 
     - run: npm run validate
 
-    - run: npm run validate_1
-
+ 
