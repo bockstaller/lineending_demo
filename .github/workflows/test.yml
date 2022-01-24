@@ -1,40 +1,50 @@
 name: Pull request
 
-
 on:
   push:
-    branches: ['*']
+    branches: ["*"]
 
 jobs:
+  yarn_new_package:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "14"
+
+      - run: yarn install
+
+      - run: yarn add ./office-addin-manifest-1.7.6.tgz
+
+      - run: yarn run validate
+
   yarn:
     runs-on: ubuntu-latest
 
     steps:
+      - uses: actions/checkout@v2
 
-    - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "14"
 
-    - uses: actions/setup-node@v2
-      with:
-        node-version: '14'
+      - run: yarn install
 
-    - run: yarn install
-    
-    - run: yarn run validate
-
+      - run: yarn run validate
 
   npm:
     runs-on: ubuntu-latest
 
     steps:
+      - uses: actions/checkout@v2
 
-    - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "14"
 
-    - uses: actions/setup-node@v2
-      with:
-        node-version: '14'
+      - run: npm install
 
-    - run: npm install
-
-    - run: npm run validate
-
- 
+      - run: npm run validate

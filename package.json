@@ -7,7 +7,7 @@
     "validate": "office-addin-manifest validate manifest.xml"
   },
   "dependencies": {
-    "office-addin-manifest": "^1.7.6",
+    "office-addin-manifest": "1.7.6",
     "office-toolbox": "^0.1.1",
     "yarn": "^1.22.17"
   }
